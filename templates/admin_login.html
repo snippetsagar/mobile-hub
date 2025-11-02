@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8d7ff, #ffe0e0);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: rgba(255,255,255,0.9);
+      width: 350px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h1 {
+      color: #4A00E0;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    input[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .back-link {
+      margin-top: 15px;
+      display: inline-block;
+      font-size: 14px;
+      color: #4A00E0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Admin Login</h1>
+    <form method="POST" action="/admin-login">
+      <input type="text" name="username" placeholder="Enter Admin Username" required>
+      <input type="password" name="password" placeholder="Enter Password" required>
+      <input type="submit" value="Login">
+    </form>
+    <a href="/search" class="back-link">← Back to Search</a>
+  </div>
+</body>
+</html>

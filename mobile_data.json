@@ -1,0 +1,74 @@
+[
+  {
+    "Name": "vivo T4x 5G",
+    "Price": "14499",
+    "RAM": "8GB",
+    "Storage": "128GB",
+    "Processor": "Dimensity 7300",
+    "Camera": "50MP + 2MP + 8MP",
+    "Battery": "6500mAh",
+    "Charging": "44W Flash Charging",
+    "Speciality": "Processor",
+    "Image": "20251029_152950_Screenshot_26-10-2025_91258_www.flipkart.com.jpeg"
+  },
+  {
+    "Name": "vivo T4x 5G",
+    "Price": "14499",
+    "RAM": "8GB",
+    "Storage": "128GB",
+    "Processor": "Dimensity 7300",
+    "Camera": "50MP + 2MP + 8MP",
+    "Battery": "6500mAh",
+    "Charging": "44W Flash Charging",
+    "Speciality": "Fast Charging",
+    "Image": "20251029_153200_Screenshot_26-10-2025_91258_www.flipkart.com.jpeg"
+  },
+  {
+    "Name": "Motorola G60",
+    "Price": "11990",
+    "RAM": "6GB",
+    "Storage": "128GB",
+    "Processor": "Qualcomm Snapdragon 732G",
+    "Camera": "108MP + 8MP + 2MP | 32MP Front Camera",
+    "Battery": "6000 mAh",
+    "Charging": "20W",
+    "Speciality": "Camera",
+    "Image": "20251101_172442_Screenshot_1-11-2025_171759_www.flipkart.com.jpeg"
+  },
+  {
+    "Name": "Redmi 13 5G",
+    "Price": "12165",
+    "RAM": "8GB",
+    "Storage": "128GB",
+    "Processor": "Snapdragon 4 Gen 2",
+    "Camera": "108MP",
+    "Battery": "5030mAh",
+    "Charging": "33W",
+    "Speciality": "Camera",
+    "Image": "20251101_173815_Screenshot_1-11-2025_173210_www.flipkart.com.jpeg"
+  },
+  {
+    "Name": "Redmi 15",
+    "Price": "14444",
+    "RAM": "8GB",
+    "Storage": "128GB",
+    "Processor": "Snapdragon 6 Gen 2",
+    "Camera": "50MP",
+    "Battery": "7000 mAh",
+    "Charging": "33W",
+    "Speciality": "Battery Backup",
+    "Image": "20251101_175428_Screenshot_1-11-2025_174833_www.flipkart.com.jpeg"
+  },
+  {
+    "Name": "Oppo A5x 5G",
+    "Price": "11499",
+    "RAM": "4GB",
+    "Storage": "64GB",
+    "Processor": "Dimensity 6300",
+    "Camera": "32MP | 5MP",
+    "Battery": "6000mAh",
+    "Charging": "45W",
+    "Speciality": "Fast Charging",
+    "Image": "20251101_181345_Screenshot_1-11-2025_18811_www.amazon.in.jpeg"
+  }
+]

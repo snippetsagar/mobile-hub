@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mobile Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8d7ff, #ffe0e0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+            color: white;
+            padding: 25px;
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .container {
+            width: 85%;
+            max-width: 450px;
+            background: #ffffffcc;
+            margin: 25px auto;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease;
+        }
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container:hover{
+            transform: translateY(-5px);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            background: #f4e9ff;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        select:focus {
+            background: #e6d4ff;
+        }
+        .btn-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 15px;
+        }
+        button{
+            width: 200px;
+            padding: 14px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        button:hover{
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Feedback Section Styles */
+        .feedback-section {
+            width: 85%;
+            max-width: 450px;
+            background: #ffffffcc;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(8px);
+        }
+        
+        .feedback-section h2 {
+            color: #4A00E0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e6d4ff;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+        
+        .feedback-form input:focus,
+        .feedback-form textarea:focus {
+            outline: none;
+            border-color: #8E2DE2;
+            background: #f8f4ff;
+        }
+        
+        .feedback-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .feedback-btn {
+            background: linear-gradient(135deg, #00b09b, #96c93d) !important;
+            width: 100% !important;
+        }
+        
+        .feedback-btn:hover {
+            background: linear-gradient(135deg, #009975, #7cb342) !important;
+        }
+        
+        .admin-link {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        
+        .admin-link a {
+            color: #8E2DE2;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .admin-link a:hover {
+            color: #4A00E0;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>Mobile Snippet</header>
+    
+    <!-- Search Form -->
+    <form action="{{ url_for('search') }}" method="POST">
+        <div class="container">
+            <h1>Price</h1>
+            <select name="price">
+                <option value="Choose">Choose</option>
+                <option value="Under 10k">Under 10k</option>
+                <option value="10k - 15k">10k - 15k</option>
+                <option value="15k - 20k">15k - 20k</option>
+                <option value="20k - 30k">20k - 30k</option>
+            </select>
+        </div>
+        <div class="container">
+            <h1>RAM</h1>
+            <select name="ram">
+                <option value="Choose">Choose</option>
+                <option value="4GB">4GB</option>
+                <option value="6GB">6GB</option>
+                <option value="8GB">8GB</option>
+            </select>
+        </div>
+        <div class="container">
+            <h1>Storage</h1>
+            <select name="storage">
+                <option value="Choose">Choose</option>
+                <option value="64GB">64GB</option>
+                <option value="128GB">128GB</option>
+                <option value="256GB">256GB</option>
+                <option value="512GB">512GB</option>
+            </select>
+        </div>
+        <div class="container">
+            <h1>Speciality</h1>
+            <select name="speciality">
+                <option value="Choose">Choose</option>
+                <option value="Processor">Processor</option>
+                <option value="Camera">Camera</option>
+                <option value="Battery Backup">Battery Backup</option>
+                <option value="Fast Charging">Fast Charging</option>
+                <option value="Snippet Special">Snippet Special</option>
+            </select>
+        </div>
+        <div class="btn-container">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+    
+    <!-- Feedback Section -->
+    <div class="feedback-section">
+        <h2>We'd Love Your Feedback! 💫</h2>
+        <form class="feedback-form" action="{{ url_for('submit_feedback') }}" method="POST">
+            <input type="text" name="name" placeholder="Your Name (Optional)" maxlength="50">
+            <input type="email" name="email" placeholder="Your Email (Optional)" maxlength="100">
+            <textarea name="message" placeholder="Your feedback helps us improve! Share your thoughts, suggestions, or any issues you faced..." required maxlength="500"></textarea>
+            <button type="submit" class="feedback-btn">Send Feedback</button>
+        </form>
+    </div>
+    
+   
+</body>
+</html>

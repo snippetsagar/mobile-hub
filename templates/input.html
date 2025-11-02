@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Snippet - Input</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8d7ff, #ffe0e0);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+      color: white;
+      padding: 25px;
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      backdrop-filter: blur(12px);
+      color: #333;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 18px;
+      color: #4A00E0;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: rgba(255,255,255,0.9);
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(138,43,226,0.3);
+      background: #fff;
+    }
+
+    /* Custom upload box */
+    .upload-box {
+      border: 2px dashed #8E2DE2;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      background: rgba(255,255,255,0.8);
+      transition: 0.3s ease;
+      cursor: pointer;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .upload-box:hover {
+      background: rgba(255,255,255,1);
+      box-shadow: 0 0 15px rgba(142,45,226,0.2);
+      transform: translateY(-3px);
+    }
+
+    .upload-box input[type="file"] {
+      display: none;
+    }
+
+    .upload-icon {
+      font-size: 50px;
+      color: #8E2DE2;
+      margin-bottom: 10px;
+    }
+
+    .upload-text {
+      font-size: 16px;
+      color: #4A00E0;
+      font-weight: 500;
+    }
+
+    #preview {
+      margin-top: 20px;
+      width: 100%;
+      max-height: 250px;
+      border-radius: 12px;
+      object-fit: cover;
+      display: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transition: opacity 0.3s ease;
+    }
+
+    input[type="submit"], 
+    button {
+      background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: 0.3s ease;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #6A00E0, #9F3EE2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .nav-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
+        color: #4A00E0;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <header>Mobile Snippet - Input</header>
+
+  <div class="container fade-in"> 
+    <form action="/upload-target" method="post" enctype="multipart/form-data">
+      <label for="imageUpload">Upload Mobile Image:</label>
+
+      <div class="upload-box" id="uploadBox">
+        <div class="upload-icon">📤</div>
+        <div class="upload-text">Click or Drop Image Here</div>
+        
+        <input type="file" id="imageUpload" name="uploadedFile" accept="image/*">
+      </div>
+
+      <img id="preview" alt="Preview Image">
+
+      <label for="name">Mobile Name:</label>
+      
+      <input type="text" id="name" name="name" placeholder="Enter Mobile Name" required>
+
+      <label for="price">Price (e.g., 10k - 15k):</label>
+      
+      <input type="text" id="price" name="price" placeholder="Enter Price (e.g., 12000)">
+
+      <label for="ram">RAM (e.g., 8GB):</label>
+      
+      <input type="text" id="ram" name="ram" placeholder="e.g. 8GB">
+
+      <label for="storage">Storage (e.g., 128GB):</label>
+      
+      <input type="text" id="storage" name="storage" placeholder="e.g. 128GB">
+      
+      <label for="processor">Processor:</label>
+      
+      <input type="text" id="processor" name="processor" placeholder="e.g. Snapdragon 888">
+
+      <label for="camera">Camera:</label>
+      
+      <input type="text" id="camera" name="camera" placeholder="e.g. 108MP + 8MP + 2MP">
+
+      <label for="battery">Battery:</label>
+      
+      <input type="text" id="battery" name="battery" placeholder="e.g. 5000mAh">
+
+      <label for="charging">Charging:</label>
+      
+      <input type="text" id="charging" name="charging" placeholder="e.g. 67W Fast Charging">
+
+      <label for="speciality">Speciality (Key Feature):</label>
+      
+      <input type="text" id="speciality" name="speciality" placeholder="e.g. Processor, Camera, or Gaming">
+
+      <button type="submit">Submit Details</button>
+    </form>
+    <a href="{{ url_for('result_page') }}" class="nav-link">View All Data</a>
+  </div>
+
+  <script>
+    const uploadBox = document.getElementById('uploadBox');
+    const imageInput = document.getElementById('imageUpload');
+    const preview = document.getElementById('preview');
+
+    uploadBox.addEventListener('click', () => imageInput.click());
+
+    imageInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+          preview.style.opacity = '1';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
