@@ -80,7 +80,7 @@ def admin_login():
         password = request.form.get("password")
 
         # Hardcoded login
-        if username == "admin" and password == "1234":
+        if username == "admin" and password == "7882":
             session["admin_logged"] = True
             return redirect(url_for("admin_upload"))
 
@@ -276,3 +276,4 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
