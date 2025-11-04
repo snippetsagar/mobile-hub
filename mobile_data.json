@@ -2,7 +2,7 @@
   {
     "Name": "vivo T4x 5G",
     "Price": "14499",
-    "RAM": "8GB",
+    "RAM": "6GB",
     "Storage": "128GB",
     "Processor": "Dimensity 7300",
     "Camera": "50MP + 2MP + 8MP",
@@ -10,18 +10,6 @@
     "Charging": "44W Flash Charging",
     "Speciality": "Processor",
     "Image": "20251029_152950_Screenshot_26-10-2025_91258_www.flipkart.com.jpeg"
-  },
-  {
-    "Name": "vivo T4x 5G",
-    "Price": "14499",
-    "RAM": "8GB",
-    "Storage": "128GB",
-    "Processor": "Dimensity 7300",
-    "Camera": "50MP + 2MP + 8MP",
-    "Battery": "6500mAh",
-    "Charging": "44W Flash Charging",
-    "Speciality": "Fast Charging",
-    "Image": "20251029_153200_Screenshot_26-10-2025_91258_www.flipkart.com.jpeg"
   },
   {
     "Name": "Motorola G60",
@@ -71,4 +59,5 @@
     "Speciality": "Fast Charging",
     "Image": "20251101_181345_Screenshot_1-11-2025_18811_www.amazon.in.jpeg"
   }
+
 ]
